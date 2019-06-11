@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE hibernate-configuration PUBLIC
+      "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+      "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+  <hibernate-configuration>
+      <session-factory>
+          <!-- 配置数据库的连接信息 -->
+          <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+         <!-- jdbc:mysql://localhost:3306/1106 -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/dbh1</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">123456</property>
+        <!-- 配置hibernate操作的数据库对应的方言 hjibernate在操作数据库的过程中，需要将普通话，翻译为特定数据对应的方言sql语句，hibernate开发的应用程序 
+             可以在不同的数据库上进行移植。 -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+         <!-- 配置数据相关的其他属性 -->
+         <!-- hibenrate生产的sql语句是否在控制台进行打印 -->
+         <property name="show_sql">true</property>
+         <!-- 是否将产生的sql语句进行格式化 -->
+         <property name="format_sql">true</property>
+         <!-- 配置hibenrate的正向工程： hibernate的反向工程：由数据库中的表，产生java程序中的类 hibenrate的正向工程：由java中的类，产生数据库中对应的表 
+             upate:如果数据库中存在某个java类对应的表，检查java类中的属性是否和数据库中的表字段一致，如果不一致进行更新 如果数据库中不存在表，会自动创建表。 -->
+         <property name="hbm2ddl">update</property>
+         <!-- 通过主配置文件，加载pojo的映射文件 -->
+         <mapping resource="com/zrdm/sql/UserBean.hbm.xml" />
+     </session-factory>
+ </hibernate-configuration>

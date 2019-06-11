@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 此时的配置文件，能看懂就看，看不懂就等着 -->
+	<package name="p1" extends="struts-default">
+		<action name="stuadd" class="com.itheima.web.action.MainAction" method="add">
+			<result name="success" type="dispatcher">main.jsp</result>
+		</action>
+		<action name="stuedit" class="com.itheima.web.action.EditAction" method="edit">
+			<result name="success" type="dispatcher">main.jsp</result>
+		</action>
+			<action name="list" class="com.itheima.web.action.MainAction" method="list">
+			<result name="success">liststu.jsp</result>
+		</action>
+		<action name="delete" class="com.itheima.web.action.DeleteAction" method="delete">
+			<result name="success">main.jsp</result>
+		</action>
+	</package>
+</struts>
